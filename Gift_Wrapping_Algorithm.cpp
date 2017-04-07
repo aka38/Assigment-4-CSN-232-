@@ -31,13 +31,13 @@ LL int modpow(LL a,LL x){
     else {a=(a*a)%mod;x>>=1;}
 	return r%mod ;
 }
-bool angle(point p, point q, point r)
+int angle(point p, point q, point r)
 {
     int val = (q.y - p.y) * (r.x - q.x) -
               (q.x - p.x) * (r.y - q.y);
  
-  
-    return (val > 0)? true: false; // clock or counterclock wise
+  if(val==0)return val;
+    return (val > 0)? 1:2; // clock or counterclock wise
 }
 void gift_wrap(int n)
 {
@@ -50,24 +50,25 @@ void gift_wrap(int n)
 		b=(a+1)%n;
 		rep(i,0,n)
 		{
-			if(angle(p[a],p[i],p[b]))
+			if(angle(p[a],p[i],p[b])==2)
 			{
 				b=i;
 			}
 		}
 		a=b;
 	 }while(a!=t2);
-	 
+	  cout<<"Convex-Hull in counterclock wise fashion:\n";
 	 rep(i,0,hull.size())
 	 {
-         // cout<<hull[i].x<<" "<< hull[i].y<<"\n";
-          s.insert({hull[i].x,hull[i].y});
+          cout<<hull[i].x<<" "<< hull[i].y<<"\n";
+         // s.insert({hull[i].x,hull[i].y});
 	 }
-	 cout<<"Convex-Hull in counterclock wise fashion:\n";
+	/* cout<<"Convex-Hull in counterclock wise fashion:\n";
 	 for(auto u: s)
 	 {
 	 	cout<<"["<<u.first<<" "<<u.second<<"]"<<"\n";
 	 }
+	 */
 
 }
 int main()
