@@ -61,21 +61,15 @@ void gift_wrap(int n)
 	 rep(i,0,hull.size())
 	 {
           cout<<hull[i].x<<" "<< hull[i].y<<"\n";
-         // s.insert({hull[i].x,hull[i].y});
 	 }
-	/* cout<<"Convex-Hull in counterclock wise fashion:\n";
-	 for(auto u: s)
-	 {
-	 	cout<<"["<<u.first<<" "<<u.second<<"]"<<"\n";
-	 }
-	 */
+	
 
 }
 int main()
 {
     
     t1=1000000007;
-	float t0,t1;
+	float t0,t;
 	t0=clock();
   	int n;
   	cout<<"Enter no. of points:\n";
@@ -84,8 +78,7 @@ int main()
   	rep(i,0,n)
   	{
         cin>>p[i].x>>p[i].y;
-  		/*p[i].x=rand()%100;
-  		p[i].y=rand()%100;*/
+  		
         if(p[i].x<t1)
         {
         	t2=i;
@@ -93,9 +86,9 @@ int main()
         }
        
   	}
-	t1=clock();
+	t=clock();
   	gift_wrap(n);
-	cout << "Total time: " << (t1-t0)/CLOCKS_PER_SEC << " seconds" << endl;
+	cout << "Total time: " << (t-t0)/CLOCKS_PER_SEC << " seconds" << endl;
 
 
 }
