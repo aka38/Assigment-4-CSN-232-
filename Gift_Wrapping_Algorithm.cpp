@@ -75,6 +75,8 @@ int main()
 {
     
     t1=1000000007;
+	float t0,t1;
+	t0=clock();
   	int n;
   	cout<<"Enter no. of points:\n";
   	cin>>n;
@@ -91,7 +93,9 @@ int main()
         }
        
   	}
+	t1=clock();
   	gift_wrap(n);
+	cout << "Total time: " << (t1-t0)/CLOCKS_PER_SEC << " seconds" << endl;
 
 
 }
