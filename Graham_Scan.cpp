@@ -129,15 +129,15 @@ void Graham_scan()
 
 int main()
 {
-    
-    t1=1000000007;
- 
+    float t0,t1;
+      
+        t0=clock();
   	cout<<"Enter no. of points:\n";
   	cin>>n;
   	cout<<"Enter the points as Xi and Yi:\n";
   	rep(i,0,n)
   	cin>>p[i].x>>p[i].y;
   	Graham_scan();
-
-
+	t1=clock();
+	cout << "Total time: " << (t1-t0)/CLOCKS_PER_SEC << " seconds" << endl;
 }
