@@ -16,7 +16,6 @@ const double eps=1e-9;
 const double pi =acos(-1);
 struct sx{};
 bool cmp(){}
-LL t1,t2,t3,t4,t5;
 bool c;
 LL lcm(LL x, LL y) { return x*1LL*y/__gcd(x, y);}
 LL int modpow(LL a,LL x){
